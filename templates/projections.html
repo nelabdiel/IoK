@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<!--
+	Monochromed by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Internet of Kilos</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="../static/js/skel.min.js"></script>
+		<script src="../static/js/skel-panels.min.js"></script>
+		<script src="../static/js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="../static/css/skel-noscript.css" />
+			<link rel="stylesheet" href="../static/css/style.css" />
+        </noscript>
+        
+        <meta charset='utf-8' />
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+       
+    <link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-0.9.3.min.css" type="text/css" />
+    <script typee="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-0.9.3.min.js"></script>
+        
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+	</head>
+	<body>
+
+	<!-- Header -->
+		<div id="header">
+			<div class="container">
+					
+				<!-- Logo -->
+					<div id="logo">
+						<h1><a href="#"><font color ="0000b3">Internet of Kilos</font></a></h1>
+						<span>Where Weightlifting, Stats and Data come together.</span>
+					</div>
+				
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="/index">Homepage</a></li>
+							<li><a href="/nsc">Nel-Sinclair Coefficient</a></li>
+							<li><a href="/worldrecords">World Records</a></li>
+							<li class="active"><a href="/projections">Projections</a></li>
+							<li><a href="/countries">Countries</a></li>
+						</ul>
+					</nav>
+
+			</div>
+		</div>
+		<!-- Header -->
+			
+	<!-- Main -->
+		<div id="main">
+			<div class="container">
+				<div class="row">
+                    
+                    <!-- Sidebar -->
+						<div id="sidebar" class="3u">
+							<section>
+                                
+                                <header>
+									<h2>Can Computers predict where you'll be next year, as a lifter?</h2>
+								</header>
+								<p>Progress is difficult to predict, because for example a lifter we'll probably get injured at least twice a year and this will result in a setback from his training. The idea is that, such conditions apply to all lifters and when we develop a model with all the data, things like injuries show up implicitly in the form of a decline in performance or the amount of times the person competed that year.</p>
+								
+								<ul class="default">
+									<!--<li><a href="#">Pellentesque quis lectus</a></li>-->
+		
+								</ul>
+							</section>
+						</div>
+					<!-- Sidebar -->
+
+				
+					<!-- Content -->
+						<div id="content" class="6u skel-cell-important">
+							<section>
+                                <center>
+                                    
+								<header>
+									<h2>Machine Learning and Weightlifting:</h2>
+									<span class="byline">Predicting individual total for the near future.</span>
+								</header>
+								
+                                    
+                                <p>Your goal for 2016 should be to total {{total_disp}}, your NSC would be {{NS_disp}}. </p>    
+                                 <div class=metanav>   
+                                <form id='input' method='post' action='projections'>
+                                    
+                                    <p>Enter your age:</p>
+                                    <input type='text' name='agep' />
+                                    <p>Enter your Body Weight (in kg):</p>
+                                    <input type='text' name='bwp' />
+                                    <p>Enter your best total (in kg) from 2015:</p>
+                                    <input type='text' name='totalp' />
+                                    
+                                    <p>
+                                    <input type="image" src="../static/images/sendbut.png" border="0" outline="none" height="42" width="150" alt="Submit Form" /></p>
+                </form>
+                                    
+                                    </div>
+<!--Table stuff-->							</center>	
+                               
+           
+
+      
+                                
+                                
+                              
+                               
+							</section>
+						</div>
+					<!-- /Content -->
+						
+					<!-- Sidebar -->
+						<div id="sidebar" class="3u">
+							<section>
+                                
+                                <header>
+									<h2>How it works:</h2>
+								</header>
+								<p>Normalyzing the data by the NSC, allows for a better comparison of lifters by taking the body weight out of the equation. After testing a few models, 'KnearestKeighbors' was chosen based on its more accurate precision. Linear models fail to give reasonable predictions and it makes sense, since as we know, progress in weightlifting is not at all linear.</p>
+                                <p>The model seems to work best for lifters with NSC coefficient in the range of -250 to 150.</p>
+								
+								<ul class="default">
+									
+		
+								</ul>
+							</section>
+						</div>
+					<!-- Sidebar -->
+				
+				</div>
+			
+			</div>
+		</div>
+	<!-- Main -->
+
+<!-- Footer -->
+		<div id="footer">
+			<div class="container">
+				<div class="row">
+					
+					<div class="6u">
+						<section>
+							<header>
+								<h2>For more info visit:</h2>
+							</header>
+							
+							<ul class="default">
+                                <li><a href="https://github.com/nelabdiel">My Github</a></li>
+								<li><a href="http://www.iwf.net/">International Weightlifting Federation</a></li>
+								<li><a href="http://www.chidlovski.net/liftup/">History of Weightlifting</a></li>
+								<li><a href="https://en.wikipedia.org/wiki/List_of_world_records_in_Olympic_weightlifting#Men">Wikipedia</a></li>
+
+							</ul>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- Footer -->
+
+	<!-- Copyright -->
+		<div id="copyright">
+			<div class="container">
+				Design by: El Nel Abdiel
+			</div>
+		</div>
+
+	</body>
+</html>
