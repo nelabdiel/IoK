@@ -9,54 +9,49 @@ import numpy as np
 from bokeh.embed import components
 from bokeh.plotting import figure
 from bokeh.util.string import encode_utf8
-import dill
-
-
-
-
-################################################
-# world records data
-###############################################
-class Company(object):
-    def __init__(self, worldrec):
-        self.worldrec = worldrec      
-with open('worldrecords_data.pkl', 'rb') as f:
-    wrdatar = pickle.load(f, encoding='latin1')    
-
-records = wrdatar.worldrec
-
-################################################
-# recent competitions data
-###############################################
-import pickle
-class Company(object):
-    def __init__(self, rec):
-        self.rec = rec
-with open('recent_comp.pkl', 'rb') as input:
-    rdatar = pickle.load(input, encoding='latin1')    
-
-recent_data = rdatar.rec  
-
-
-################################################
-# predictive model
-###############################################
-with open('nei_model.dill', 'rb') as input:
-    nei_model_pred = dill.load(input)
-
 
 app = Flask(__name__)
 
 app.vars = {}
 
+################################################
+# world records data
+###############################################
+#class Company(object):
+#    def __init__(self, worldrec):
+#        self.worldrec = worldrec      
+#with open('worldrecords_data.pkl', 'rb') as f:
+#    wrdatar = pickle.load(f, encoding='latin1')    
+
+#records = wrdatar.worldrec
+
+###############################################
+# recent competitions data
+###############################################
+#class Company(object):
+#    def __init__(self, rec):
+#        self.rec = rec
+#with open('recent_comp.pkl', 'rb') as input:
+#    rdatar = pickle.load(input, encoding='latin1')    
+
+#recent_data = rdatar.rec  
+
+
+################################################
+# predictive model
+###############################################
+#with open('nei_model.dill', 'rb') as input:
+#    nei_model_pred = dill.load(input)
+
+
 #Nel-Sinclair Curve
-a = 85.477722914300003
-b = 41.357074003999998
-c = 0.0060825625000000003
-d = 512.45085465119996
+#a = 85.477722914300003
+#b = 41.357074003999998
+#c = 0.0060825625000000003
+#d = 512.45085465119996
 #Nel-Sinclair Function    
-def approx(x): 
-    return a*np.log(c*(x-b))+d
+#def approx(x): 
+#    return a*np.log(c*(x-b))+d
 
 #Index page
 @app.route('/')
@@ -80,13 +75,6 @@ def NSC():
         #World Records
     bw = [55.62, 61.81, 68.68, 76.4, 84.69, 93.52, 104.76, 147.48]
     total = [305, 332, 359, 380, 394, 418, 436, 472]
-    
-
-    
- 
-    
-   
-    
     
     x = np.linspace(50, 180, 1000)
     
@@ -335,12 +323,13 @@ def P():
         
         
         
+                #NSp = round(-approx(bwp)+totalp, 2)
+                #for index, row in recent_data.iterrows():
+                    #if abs(row['Age']-agep)<=2 and abs(row['NSC']-NSp)<=2:
+                        #comparison = (row['LC'],row['CC'],row['Birth'],row['Year'],row['Year']+1)
+                comparison = (5933, 15, 2016-agep, agep,2016)        
+                NSp2 = nei_model_pred.predict(comparison)   
                 NSp = round(-approx(bwp)+totalp, 2)
-                for index, row in recent_data.iterrows():
-                    if abs(row['Age']-agep)<=2 and abs(row['NSC']-NSp)<=2:
-                        comparison = (row['LC'],row['CC'],row['Birth'],row['Year'],row['Year']+1)
-                        
-                NSp2 = nei_model_pred.predict(comparison)     
                 
                
                 total_disp = NSp-NSp2+totalp
