@@ -5,7 +5,6 @@ from bs4 import BeautifulSoup
 import math
 import pickle
 import pandas as pd
-import matplotlib
 import scipy as sp
 import numpy as np
 from bokeh.embed import components
