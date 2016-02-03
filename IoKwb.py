@@ -44,7 +44,7 @@ records = wrdatar.worldrec
 #    nei_model_pred = dill.load(input)
 
 
-Nel-Sinclair Curve
+#Nel-Sinclair Curve
 a = 85.477722914300003
 b = 41.357074003999998
 c = 0.0060825625000000003
