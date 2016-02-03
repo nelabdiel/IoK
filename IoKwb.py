@@ -309,7 +309,7 @@ def P():
         if app.vars['agep'] == 'Ruben Olmedo':
             html = render_template(
                 'projections.html',
-                total_disp='A new WR of 305.5', NS_disp='OVER 9000!!!!',
+                total_disp='A new WR of 306', NS_disp='OVER 9000!!!!',
             )
             return encode_utf8(html)   
         
