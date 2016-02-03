@@ -17,13 +17,13 @@ app.vars = {}
 ################################################
 # world records data
 ###############################################
-#class Company(object):
-#    def __init__(self, worldrec):
-#        self.worldrec = worldrec      
-#with open('worldrecords_data.pkl', 'rb') as f:
-#    wrdatar = pickle.load(f, encoding='latin1')    
+class Company(object):
+    def __init__(self, worldrec):
+        self.worldrec = worldrec      
+with open('worldrecords_data.pkl', 'rb') as f:
+    wrdatar = pickle.load(f, encoding='latin1')    
 
-#records = wrdatar.worldrec
+records = wrdatar.worldrec
 
 ###############################################
 # recent competitions data
@@ -44,14 +44,14 @@ app.vars = {}
 #    nei_model_pred = dill.load(input)
 
 
-#Nel-Sinclair Curve
-#a = 85.477722914300003
-#b = 41.357074003999998
-#c = 0.0060825625000000003
-#d = 512.45085465119996
+Nel-Sinclair Curve
+a = 85.477722914300003
+b = 41.357074003999998
+c = 0.0060825625000000003
+d = 512.45085465119996
 #Nel-Sinclair Function    
-#def approx(x): 
-#    return a*np.log(c*(x-b))+d
+def approx(x): 
+    return a*np.log(c*(x-b))+d
 
 #Index page
 @app.route('/')
