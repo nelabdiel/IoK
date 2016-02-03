@@ -46,7 +46,7 @@ class Company1(object):
     def __init__(self, mod):
         self.mod = mod
 with open('nei_model.pkl', 'rb') as input:
-    nei_mod = pickle.load(input)    
+    nei_model_predict = pickle.load(input)    
 
 nei_model_pred = nei_model_predict.mod
 
