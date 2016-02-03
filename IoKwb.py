@@ -21,7 +21,7 @@ class Company(object):
     def __init__(self, worldrec):
         self.worldrec = worldrec      
 with open('worldrecords_data.pkl', 'rb') as f:
-    wrdatar = pickle.load(f, encoding='latin1')    
+    wrdatar = pickle.load(f)    
 
 records = wrdatar.worldrec
 
