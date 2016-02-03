@@ -10,6 +10,7 @@ from bokeh.embed import components
 from bokeh.plotting import figure
 from bokeh.util.string import encode_utf8
 
+
 app = Flask(__name__)
 
 app.vars = {}
@@ -40,8 +41,8 @@ records = wrdatar.worldrec
 ################################################
 # predictive model
 ###############################################
-#with open('nei_model.dill', 'rb') as input:
-#    nei_model_pred = dill.load(input)
+with open('nei_model.dill', 'rb') as input:
+    nei_model_pred = dill.load(input)
 
 
 #Nel-Sinclair Curve
