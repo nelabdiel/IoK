@@ -46,9 +46,9 @@ class Company1(object):
     def __init__(self, mod):
         self.mod = mod
 with open('nei_model.pkl', 'rb') as input:
-    nei_model_predict = pickle.load(input)    
+    nei_mod = pickle.load(input)    
 
-nei_model_predict = nei_model_predict.mod
+nei_model_predict = nei_mod.mod
 
 
 #Nel-Sinclair Curve
