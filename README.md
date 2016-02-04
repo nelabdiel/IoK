@@ -1,4 +1,5 @@
 # Internet of Kilos
+www.iokilos.herokuapp.com
 This is a website for Olympic Weightlifting Analysis. We are currently on the 1.0 version.
 
 This is the first version of the website. In it you'll find:
@@ -13,4 +14,4 @@ This is work in progress. I'll eventually improve the Machine learning part, the
 __________________
 This Heroku website is written in Python and uses, SKLearn/Machine-Learning (Naive Bayes and KNearestNeighbors), BeautifulSoup (for live webscraping), Bokeh, Cartodb, HTML/CSS and JavaScript.
 
-Some data has been scraped and pickled, and some models have been dilled to decrease loading time.
+Some data has been scraped and pickled as well as some Machine Learning models to decrease loading time.
