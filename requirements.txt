@@ -1,6 +1,4 @@
 Flask==0.10.1
 Django==1.8.1
 gunicorn==19.3.0
-oauth==1.0.1
-oauthlib==0.7.2
 pickleshare==0.5
