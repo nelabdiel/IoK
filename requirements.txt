@@ -5,8 +5,9 @@ Jinja2>=2.7.1
 oauth==1.0.1
 oauthlib==0.7.2
 requests>=2.2.1
-scikit-learn>=0.16.0
+scikit-learn==0.16.1
 beautifulsoup4>=4.3
 pickleshare==0.5
 dill==0.2.4
 bokeh==0.10.0
+numpy==1.10.1
