@@ -1,1 +1,1 @@
-web: python IoKwb.py
+web: python IoKwb.ipynb
