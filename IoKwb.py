@@ -5,11 +5,11 @@ from bs4 import BeautifulSoup
 import math
 import pickle
 import pandas as pd
-#import numpy as np
+import scipy as sp
+import numpy as np
 from bokeh.embed import components
 from bokeh.plotting import figure
 from bokeh.util.string import encode_utf8
-
 
 app = Flask(__name__)
 
@@ -22,7 +22,7 @@ class Company(object):
     def __init__(self, worldrec):
         self.worldrec = worldrec      
 with open('worldrecords_data.pkl', 'rb') as f:
-    wrdatar = pickle.load(f)    
+    wrdatar = pickle.load(f, encoding='latin1')    
 
 records = wrdatar.worldrec
 
@@ -45,7 +45,7 @@ records = wrdatar.worldrec
 #    def __init__(self, mod):
 #        self.mod = mod
 #with open('nei_model.pkl', 'rb') as input:
-#    nei_model_predict = pickle.load(input)    
+#    nei_model_predict = pickle.load(input, encoding='latin1')    
 
 #nei_model_pred = nei_model_predict.mod
 
@@ -231,7 +231,12 @@ def WR():
         group = int(app.vars['group'])   
             
         records_disp = records[(records['Event Code']==event) & (records['Weight Class']==group)]
-
+        palette = ["#053061", "#2126ac", "#4353c3", "#92c7de", "#d1e5f0",
+               "#f7f1c7", "#fddbc7", "#f4a582", "#d6104d", "#b2182b", "#67e01f",
+                "#023061", "#2162ac", "#4392c3", "#92c2de", "#a1e2f0",
+                   "#f3a7f7", "#fddbc3", "#f4a523", "#d6603a", "#b3182b", "#370d1f",
+                   "#053061", "#2166ac", "#4393c3", "#92c5de", "#d1e5f0",
+                   "#f4f7f4", "#fdd3c7", "#f4a512", "#d2344d", "#b2382a", "#61001f"]
 
         colormap = {}
         k = 0
@@ -303,7 +308,7 @@ def P():
         if app.vars['agep'] == 'Ruben Olmedo':
             html = render_template(
                 'projections.html',
-                total_disp='A new WR of 306', NS_disp='OVER 9000!!!!',
+                total_disp='A new WR of 305.5', NS_disp='OVER 9000!!!!',
             )
             return encode_utf8(html)   
         
@@ -324,18 +329,21 @@ def P():
         
         
         
-                
+                #NSp = round(-approx(bwp)+totalp, 2)
+                #for index, row in recent_data.iterrows():
+                    #if abs(row['Age']-agep)<=2 and abs(row['NSC']-NSp)<=2:
+                        #comparison = (row['LC'],row['CC'],row['Birth'],row['Year'],row['Year']+1)
                 comparison = (5933, 15, 2016-agep, agep,2016)        
-                #NSp2 = nei_model_pred.predict(comparison)   
+                NSp2 = nei_model_pred.predict(comparison)   
                 NSp = round(-approx(bwp)+totalp, 2)
-                #NSp3 = round(NSp2[0],2)
+                NSp3 = round(NSp2[0],2)
                
-                #total_disp = NSp-NSp2+totalp
+                total_disp = NSp-NSp3+totalp
             
                 
                 html = render_template(
                     'projections.html',
-                    total_disp=1, NS_disp=1,
+                    total_disp=total_disp, NS_disp=NSp3,
                 )
                 return encode_utf8(html)    
                 
