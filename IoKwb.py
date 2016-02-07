@@ -9,7 +9,6 @@ import numpy as np
 from bokeh.embed import components
 from bokeh.plotting import figure
 from bokeh.util.string import encode_utf8
-import dill
 
 
 app = Flask(__name__)
