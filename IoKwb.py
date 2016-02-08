@@ -41,16 +41,16 @@ records = wrdatar.worldrec
 ################################################
 # predictive model
 ###############################################
-#class Company1(object):
-#    def __init__(self, mod):
-#        self.mod = mod
-#with open('nei_model.pkl', 'rb') as input:
-#    nei_model_predict = pickle.load(input)    
+class Company1(object):
+    def __init__(self, mod):
+        self.mod = mod
+with open('nei_model.pkl', 'rb') as input:
+    nei_model_predict = pickle.load(input)    
 
-#nei_model_pred = nei_model_predict.mod
+nei_model_pred = nei_model_predict.mod
 
-with open('nei_model.dill', 'rb') as input:
-    nei_model_pred = dill.load(input)
+#with open('nei_model.dill', 'rb') as input:
+    #nei_model_pred = dill.load(input)
 
 #Nel-Sinclair Curve
 a = 85.477722914300003
