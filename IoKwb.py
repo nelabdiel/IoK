@@ -37,6 +37,30 @@ records = wrdatar.worldrec
 
 #recent_data = rdatar.rec  
 
+###############################################
+# countries lat long info
+###############################################
+class Company3(object):
+    def __init__(self, cu):
+        self.cu = cu
+        
+with open('unique_countries.pkl', 'rb') as input:
+    uni_c = pickle.load(input)    
+
+unique_c_list = uni_c.cu        
+
+###############################################
+# predictive model lat long
+###############################################
+
+class Company2(object):
+    def __init__(self, geo):
+        self.geo = geo
+        
+with open('nei_improve.pkl', 'rb') as input:
+    nei_model_imp = pickle.load(input)    
+
+model_imp = nei_model_imp.geo       
 
 ################################################
 # predictive model
